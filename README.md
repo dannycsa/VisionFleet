@@ -1,5 +1,10 @@
 # VisionFleet
 
+**Collaborative Urban Event Mapping System using Loose Fusion of Computer Vision and GPS in ROS 2**
+*Project developed for the Postgraduate Diploma in Robotics — 3rd Edition*
+
+**Author:** Alvaro Daniel Callata Suxo  
+
 ## Introduction
 VisionFleet is a collaborative mapping system designed to detect and report temporary urban traffic events, such as roadblocks or unannounced construction, in real-time. Traditional navigation systems often have a delay in reflecting these disruptions. This project proposes using a fleet of micromobility vehicles equipped with standard cameras and GPS receivers to map these events collectively.
 
