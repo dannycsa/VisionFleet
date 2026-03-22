@@ -1,0 +1,28 @@
+./CarlaUE4.sh --ros2 -quality-level=Low -RenderOffScreen
+
+cd ~/CARLA/PythonAPI/examples/ros2
+killall -9 CarlaUE4-Linux-Shipping
+killall -9 python3
+
+python3 ros2_native.py --file bike_stack.json
+python3 attach_control.py 
+
+
+ros2 run rqt_image_view rqt_image_view
+
+python3 ~/VisionFleet_ws/assets/spawn_obstacles.py
+python3 bike_navigator.py --file bike_stack.json --bike-id heroD
+
+python3 fleet_spawner.py -f bike_stack.json -q 2
+
+
+ros2 run visionfleet_biker detection_node.py 
+ros2 launch visionfleet_biker visionfleet.launch.py
+
+
+
+Step 7 — Control interface
+A single pygame window combining everything: the GPS map with all bikes and event zones colored by confidence, a camera feed panel (switchable between bikes by clicking their triangle on the map), buttons for spawn obstacle / remove obstacle / spawn new bike. This is the demo-ready deliverable.
+
+Step 8 — Single launch file
+One command starts everything: CARLA is already external, but one ros2 launch brings up all nodes, all bikes, the interface. Optional arguments: number of bikes, obstacle count, map name.

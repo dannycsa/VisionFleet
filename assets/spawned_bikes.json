@@ -1,0 +1,12 @@
+[
+    {
+        "bike_name": "bike_1",
+        "actor_id": 24,
+        "spawn_index": 0
+    },
+    {
+        "bike_name": "bike_2",
+        "actor_id": 28,
+        "spawn_index": 1
+    }
+]
